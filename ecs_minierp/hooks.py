@@ -9,6 +9,12 @@ app_color = "grey"
 app_email = "info@erpcloud.systems"
 app_license = "MIT"
 
+
+
+app_include_css = "/assets/ecs_minierp/css/ecs_minierp.css"
+app_include_js = "/assets/ecs_minierp/js/ecs_minierp.js"
+
+
 # Includes in <head>
 # ------------------
 

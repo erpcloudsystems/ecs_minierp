@@ -1,2 +1,67 @@
-test
+.navbar {
+    background: rgb(255,255,255);
+    background: linear-gradient(100deg, rgba(255,255,255,1) 0%, rgba(239,145,4,1) 45%, rgba(255,255,255,1) 100%);
+    border-bottom: 2px solid #0089FF;
+}
 
+.desk-sidebar .standard-sidebar-item.selected, .search-dialog .search-results .search-sidebar .standard-sidebar-item.selected, .standard-sidebar .standard-sidebar-item.selected{
+    border-left: 6px solid #0089FF;
+    border-right: 2px solid #0089FF;
+    border-bottom: 2px solid hsl(36, 97%, 48%);
+    border-top: 2px solid #ef9104;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*
+.page-container {
+    background-image: url("https://tamidgroup.org/uva/wp-content/uploads/sites/53/2015/12/Business-Continuity-Office-Background-White.jpg");
+}
+*/
+
+.widget {
+    border-left: 6px solid #0089FF;
+    border-right: 2px solid #0089FF;
+    border-bottom: 2px solid #ef9104;
+    border-top: 2px solid #ef9104;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.widget .widget-head .widget-title {
+    border-bottom: 2px solid #0089FF;
+    
+    
+}
+.widget-group .widget-group-head .widget-group-title {
+    color: #000000;
+    display: inline-block;
+  text-shadow: #bbb 0 0 1px, #fff 0 -1px 2px, #fff 0 -3px 2px, rgba(0,0,0,0.8) 0 30px 25px;
+  transition: margin-left 0.3s cubic-bezier(0, 1, 0, 1);
+}
+@font-face {
+    font-family: 'Cairo';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/cairo/v10/SLXGc1nY6HkvalIkTpu0xg.woff2) format('woff2');
+    unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+.desk-sidebar .standard-sidebar-item, .search-dialog .search-results .search-sidebar .standard-sidebar-item, .standard-sidebar .standard-sidebar-item{
+    color: #ef9104;
+
+}
+
+.form-control{
+    border-left: 6px solid #0089FF;
+    border-right: 2px solid #0089FF;
+    border-bottom: 2px solid #ef9104;
+    border-top: 2px solid #ef9104;
+    -webkit-transition: 0.5s;  
+}
+
+.form-dashboard-section, .form-section.card-section{
+    border-left: 6px solid #ef9104;
+    border-right: 2px solid #ef9104;
+    border-bottom: 2px solid #ef9104;
+    border-top: 2px solid #ef9104;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
