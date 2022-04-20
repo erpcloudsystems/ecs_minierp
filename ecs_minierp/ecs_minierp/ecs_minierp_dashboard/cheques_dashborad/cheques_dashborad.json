@@ -1,0 +1,46 @@
+{
+ "cards": [
+  {
+   "card": "No. Of Receivable Cheques"
+  },
+  {
+   "card": "Total Receivable Cheques"
+  },
+  {
+   "card": "No. Of Payable Cheques"
+  },
+  {
+   "card": "Total Payable Cheques"
+  }
+ ],
+ "charts": [
+  {
+   "chart": "Received Cheques Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Paid Cheques Status",
+   "width": "Half"
+  },
+  {
+   "chart": "Receivable Cheques",
+   "width": "Full"
+  },
+  {
+   "chart": "Payable Cheques",
+   "width": "Full"
+  }
+ ],
+ "creation": "2022-04-14 22:17:10.562958",
+ "dashboard_name": "Cheques Dashborad",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-04-14 22:17:10.562958",
+ "modified_by": "Administrator",
+ "module": "Ecs Minierp",
+ "name": "Cheques Dashborad",
+ "owner": "Administrator"
+}

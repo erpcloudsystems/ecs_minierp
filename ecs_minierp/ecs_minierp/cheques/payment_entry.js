@@ -190,9 +190,8 @@ filters: { 'name': cur_frm.doc.bank_acc},
 frappe.ui.form.on('Payment Entry', 'payment_type',  function(frm) {
    if(cur_frm.doc.payment_type == "Receive" && cur_frm.doc.mode_of_payment_type == "Cheque"){
        frappe.call({ method: "frappe.client.get_value",
-args: { doctype: "Company",
+args: { doctype: "Cheque Settings",
 fieldname: "default_incoming_cheque_wallet_account",
-filters: { 'name': cur_frm.doc.company},
 }, callback: function(r)
 {cur_frm.set_value("paid_to", r.message.default_incoming_cheque_wallet_account);
   } });
@@ -203,9 +202,8 @@ filters: { 'name': cur_frm.doc.company},
 frappe.ui.form.on('Payment Entry', 'mode_of_payment',  function(frm) {
    if(cur_frm.doc.payment_type == "Receive" && cur_frm.doc.mode_of_payment_type == "Cheque"){
        frappe.call({ method: "frappe.client.get_value",
-args: { doctype: "Company",
+args: { doctype: "Cheque Settings",
 fieldname: "default_incoming_cheque_wallet_account",
-filters: { 'name': cur_frm.doc.company},
 }, callback: function(r)
 {cur_frm.set_value("paid_to", r.message.default_incoming_cheque_wallet_account);
   } });

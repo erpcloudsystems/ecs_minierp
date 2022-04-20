@@ -179,9 +179,8 @@ frappe.ui.form.on('Multiple Cheque Entry', 'party_type',  function(frm) {
   } });
 
     frappe.call({ method: "frappe.client.get_value",
-	args: { doctype: "Company",
+	args: { doctype: "Cheque Settings",
 	fieldname: "default_incoming_cheque_wallet_account",
-	filters: { 'name': cur_frm.doc.company},
 	}, callback: function(r)
 	{cur_frm.set_value("paid_to", r.message.default_incoming_cheque_wallet_account);
   } });
@@ -198,7 +197,7 @@ frappe.ui.form.on('Multiple Cheque Entry', 'party_type',  function(frm) {
   } });
 
     frappe.call({ method: "frappe.client.get_value",
-	args: { doctype: "Company",
+	args: { doctype: "Cheque Settings",
 	fieldname: "default_incoming_cheque_wallet_account",
 	filters: { 'name': cur_frm.doc.company},
 	}, callback: function(r)

@@ -173,41 +173,40 @@ def pe_on_cancel(doc, method=None):
 def pe_on_update_after_submit(doc, method=None):
 
 ################################################ Start Of CHEQUES code #################################################
-    default_payback_cheque_wallet_account = frappe.db.get_value("Company", doc.company,
-                                                                "default_payback_cheque_wallet_account")
-    default_rejected_cheque_account = frappe.db.get_value("Company", doc.company, "default_rejected_cheque_account")
-    default_cash_account = frappe.db.get_value("Company", doc.company, "default_cash_account")
-    default_bank_commissions_account = frappe.db.get_value("Company", doc.company, "default_bank_commissions_account")
+    default_payback_cheque_wallet_account = frappe.db.get_single_value("Cheque Settings", "default_payback_cheque_wallet_account")
+    default_rejected_cheque_account = frappe.db.get_single_value("Cheque Settings", "default_rejected_cheque_account")
+    default_cash_account = frappe.db.get_single_value("Cheque Settings", "default_cash_account")
+    default_bank_commissions_account = frappe.db.get_single_value("Cheque Settings", "default_bank_commissions_account")
 
     if not doc.cheque_bank and doc.cheque_action == "إيداع شيك تحت التحصيل":
-        frappe.throw(_(" برجاء تحديد البنك والحساب البنكي "))
+        frappe.throw(" برجاء تحديد البنك والحساب البنكي ")
 
     if not doc.bank_acc and doc.cheque_action == "إيداع شيك تحت التحصيل":
-        frappe.throw(_("برجاء تحديد الحساب البنكي"))
+        frappe.throw("برجاء تحديد الحساب البنكي")
 
     if not doc.account and doc.cheque_action == "إيداع شيك تحت التحصيل" and doc.with_bank_commission:
-        frappe.throw(_(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.account and doc.cheque_action == "صرف شيك تحت التحصيل":
-        frappe.throw(_(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.account and doc.cheque_action == "رفض شيك تحت التحصيل" and doc.with_bank_commission:
-        frappe.throw(_(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.account and doc.cheque_action == "صرف الشيك":
-        frappe.throw(_(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد الحساب الجاري داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.collection_fee_account and doc.cheque_action == "إيداع شيك تحت التحصيل":
-        frappe.throw(_(" برجاء تحديد حساب برسم التحصيل داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد حساب برسم التحصيل داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.collection_fee_account and doc.cheque_action == "صرف شيك تحت التحصيل":
-        frappe.throw(_(" برجاء تحديد حساب برسم التحصيل داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد حساب برسم التحصيل داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.collection_fee_account and doc.cheque_action == "رفض شيك تحت التحصيل":
-        frappe.throw(_(" برجاء تحديد حساب برسم التحصيل داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد حساب برسم التحصيل داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if not doc.payable_account and doc.cheque_action == "صرف الشيك":
-        frappe.throw(_(" برجاء تحديد حساب برسم الدفع داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى "))
+        frappe.throw(" برجاء تحديد حساب برسم الدفع داخل الحساب البنكي وإعادة إختيار الحساب البنكي مرة أخرى ")
 
     if doc.cheque_action == "تحويل إلى حافظة شيكات أخرى":
         new_mode_of_payment_account = frappe.db.get_value('Mode of Payment Account',
@@ -749,14 +748,14 @@ def pe_on_update_after_submit(doc, method=None):
         doc.reload()
 
     if not doc.encashment_amount and doc.cheque_action == "تسييل الشيك":
-        frappe.throw(_("برجاء إدخال مبلغ التسييل"))
+        frappe.throw("برجاء إدخال مبلغ التسييل")
 
     if doc.encashment_amount > doc.paid_amount and doc.cheque_action == "تسييل الشيك":
-        frappe.throw(_("مبلغ التسييل لا يمكن أن يكون أكبر من مبلغ الشيك"))
+        frappe.throw("مبلغ التسييل لا يمكن أن يكون أكبر من مبلغ الشيك")
         doc.reload()
 
     if doc.encashed_amount > doc.paid_amount and doc.cheque_action == "تسييل الشيك":
-        frappe.throw(_("مبلغ التسييل لا يمكن أن يكون أكبر من المبلغ الغير مسيل"))
+        frappe.throw("مبلغ التسييل لا يمكن أن يكون أكبر من المبلغ الغير مسيل")
         doc.reload()
 
     if doc.cheque_action == "تسييل الشيك":
@@ -844,7 +843,7 @@ def pe_on_update_after_submit(doc, method=None):
         doc.reload()
 
     if not doc.bank_acc and doc.cheque_action in ("سحب الشيك", "صرف الشيك"):
-        frappe.throw(_("برجاء تحديد الحساب البنكي"))
+        frappe.throw("برجاء تحديد الحساب البنكي")
 
     if doc.cheque_action == "صرف الشيك" and doc.payment_type == "Pay":
         frappe.db.sql("""update `tabPayment Entry` set clearance_date = %s where name=%s """,
