@@ -1,0 +1,32 @@
+{
+ "custom_fields": [],
+ "custom_perms": [],
+ "doctype": "Customer Group",
+ "property_setters": [
+  {
+   "_assign": null,
+   "_comments": null,
+   "_liked_by": null,
+   "_user_tags": null,
+   "creation": "2022-04-23 21:18:27.701203",
+   "default_value": null,
+   "doc_type": "Customer Group",
+   "docstatus": 0,
+   "doctype_or_field": "DocField",
+   "field_name": "customer_group_name",
+   "idx": 0,
+   "modified": "2022-04-23 21:18:27.701203",
+   "modified_by": "Administrator",
+   "name": "Customer Group-customer_group_name-description",
+   "owner": "Administrator",
+   "parent": null,
+   "parentfield": null,
+   "parenttype": null,
+   "property": "description",
+   "property_type": "Text",
+   "row_name": null,
+   "value": "\u0642\u0645 \u0628\u0627\u062f\u062e\u0627\u0644 \u0627\u0633\u0645 \u0645\u062c\u0645\u0648\u0639\u0629 \u0627\u0644\u0639\u0645\u0644\u0627\u0621 \u0627\u0644\u062d\u0627\u0644\u064a\u0629"
+  }
+ ],
+ "sync_on_migrate": 1
+}
